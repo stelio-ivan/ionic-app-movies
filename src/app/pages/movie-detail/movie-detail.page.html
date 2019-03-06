@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Movie Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+      <ion-img [src]="movie?.photo"></ion-img>
+      <ion-card-header>
+        <ion-card-title color="primary">
+          <h2>{{movie?.title}}</h2>
+        </ion-card-title>
+        <ion-card-subtitle>{{movie?.year}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{movie?.sinopse}}</p>
+      </ion-card-content>
+    </ion-card>
+
+  <ion-list>
+    <ion-item>
+      <ion-icon name="videocam" slot="start"></ion-icon>
+      <ion-text color="primary">Director</ion-text>
+      <ion-text slot="end" color="secondary">{{movie?.director}}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="people" slot="start"></ion-icon>
+      <ion-text color="primary">Stars</ion-text>
+      <ion-text slot="end" color="secondary">{{movie?.stars}}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="pricetags" slot="start"></ion-icon>
+      <ion-text color="primary">Genre</ion-text>
+      <ion-text slot="end" color="secondary">{{movie?.genre}}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="time" slot="start"></ion-icon>
+      <ion-text color="primary">Runtime</ion-text>
+      <ion-text slot="end" color="secondary">{{movie?.runtime}} min</ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="film" slot="start"> </ion-icon>
+      <ion-label color="primary">Wishlist</ion-label>
+      <ion-toggle [(ngModel)]="movie && movie.wished" (ionChange)="toggleChanged()" color="secondary"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="flag" slot="start"> </ion-icon>
+      <ion-label color="primary">Watchlist</ion-label>
+      <ion-toggle [(ngModel)]="movie && movie.watched" (ionChange)="toggleChanged()" color="secondary"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

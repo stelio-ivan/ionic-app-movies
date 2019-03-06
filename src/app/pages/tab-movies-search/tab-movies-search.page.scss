@@ -1,0 +1,11 @@
+
+// Adjust to rectangular shape movie covers
+.item ion-thumbnail.movie-cover ion-img ,
+.item ion-thumbnail.movie-cover img {
+  height: 10vh;
+  width: auto !important;
+}
+
+.item ion-thumbnail.movie-cover {
+  margin-right: 5px;
+}

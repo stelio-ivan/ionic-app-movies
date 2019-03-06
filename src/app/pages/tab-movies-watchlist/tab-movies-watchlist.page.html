@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Movies in Watchlist
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <!-- list item template -->
+    <ion-item *ngFor="let movie of movies" detail [routerLink]="['/movie-detail/', movie.uuid]" routerDirection="forward">
+      <ion-thumbnail slot="start" class="movie-cover">
+        <img src="{{ movie.thumb }}">
+      </ion-thumbnail>
+      <ion-label text-wrap>
+        <ion-text color="primary">
+          <h2>{{ movie.title }}</h2>
+        </ion-text>
+        <p>{{ movie.year }}</p>
+        <ion-text color="secondary">
+          <p>{{ movie.stars }}</p>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

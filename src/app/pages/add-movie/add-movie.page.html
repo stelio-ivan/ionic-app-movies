@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Movie</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form #movieForm="ngForm" (ngSubmit)="saveMovie(movieForm)">
+
+    <ion-item>
+      <ion-icon name="film" slot="start"> </ion-icon>
+      <ion-label color="primary">Title</ion-label>
+      <ion-input name="title" type="text" placeholder="Sharknado" ngModel></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="image" slot="start"> </ion-icon>
+      <ion-label color="primary">Thumbnail</ion-label>
+      <ion-input name="thumb" type="text" placeholder="https://..." ngModel required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="images" slot="start"> </ion-icon>
+      <ion-label color="primary">Photo</ion-label>
+      <ion-input name="photo" type="text" placeholder="https://..." ngModel required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="calendar" slot="start"> </ion-icon>
+      <ion-label color="primary">Release</ion-label>
+      <ion-input name="year" type="number" placeholder="2013" ngModel required pattern="[1-2]\d{3}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="paper" slot="start"> </ion-icon>
+      <ion-label color="primary">Sinopse</ion-label>
+      <ion-input name="sinopse" type="text" placeholder="When a freak hurricane swamps Los Angeles..." ngModel required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="time" slot="start"> </ion-icon>
+      <ion-label color="primary">Runtime</ion-label>
+      <ion-input name="runtime" type="text" placeholder="86" ngModel required></ion-input>
+      <ion-text slot="end">min</ion-text>
+    </ion-item>
+
+    <!-- TO DO Collect data for 'Director', 'Stars' e 'Genre' -->
+
+    <div padding>
+      <ion-button size="large" type="submit" [disabled]="movieForm.invalid" expand="block">Register</ion-button>
+    </div>
+  </form>
+
+</ion-content>
